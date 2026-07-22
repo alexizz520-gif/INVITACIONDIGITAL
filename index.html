@@ -1232,13 +1232,17 @@ height:100%;
 
 background-image:url("img/puertas.png");
 
-background-size:200% 100%;
+background-size:cover;
 
 background-repeat:no-repeat;
+
+background-position:center;
 
 transition:2.2s cubic-bezier(.77,0,.18,1);
 
 z-index:2;
+
+overflow:hidden;
 
 }
 .puerta::before{
@@ -1303,12 +1307,35 @@ background-position:left center;
 
 }
 
-
 .derecha{
 
 right:0;
 
 background-position:right center;
+
+}
+
+
+
+@media (max-width:768px){
+
+.puerta{
+
+background-size:cover;
+
+}
+
+.izquierda{
+
+background-position:left center;
+
+}
+
+.derecha{
+
+background-position:right center;
+
+}
 
 }
 /* CONTENIDO */
