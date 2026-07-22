@@ -1252,11 +1252,9 @@ height:100%;
 
 background-image:url("img/puertas.png");
 
-background-size:cover;
+background-size:200% 100%;
 
 background-repeat:no-repeat;
-
-background-position:center;
 
 transition:2.2s cubic-bezier(.77,0,.18,1);
 
@@ -1336,25 +1334,21 @@ background-position:right center;
 }
 
 
-
 @media (max-width:768px){
 
 .puerta{
-
-background-size:cover;
+background-size: 200% 100%;
 
 }
 
 .izquierda{
-
-background-position:left center;
-
+    left:0;
+    background-position:0% center;
 }
 
 .derecha{
-
-background-position:right center;
-
+    right:0;
+    background-position:100% center;
 }
 
 }
