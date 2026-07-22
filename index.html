@@ -1,335 +1,2293 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boda Yadira & Daniel</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<title>Javier & Jessica</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: url('https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1500&q=80') center/cover fixed no-repeat;
-    overflow-x: hidden;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.25);
-    z-index: -1;
+html{
+scroll-behavior:smooth;
 }
 
-.section {
-    padding: 40px 15px;
-    display: flex;
-    justify-content: center;
+body{
+
+font-family:Poppins,sans-serif;
+color:white;
+overflow-x:hidden;
+
+background:url("img/fondo.jpg") center center/cover no-repeat fixed;
+
 }
 
-.card {
-    background: rgba(255,255,255,0.35);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    padding: 25px 20px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    text-align: center;
-    border: 1.5px solid rgba(255,180,150,0.6);
-    animation: fadeUp 1s ease;
+
+/* CAPA SOBRE EL FONDO */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:linear-gradient(
+rgba(35,22,12,.55),
+rgba(10,8,5,.70)
+);
+
+backdrop-filter:blur(5px);
+
+z-index:-1;
+
 }
 
-/* Nombre */
-h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.4em;
-    margin: 0;
+
+/* CONTENEDOR */
+
+main{
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:40px 0 80px;
+
+gap:60px;
+
 }
 
-.gold-text {
-    background: linear-gradient(90deg, #c48a6a, #ffd1b3, #ffb38a, #c48a6a);
-    background-size: 300% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    animation: goldMove 4s linear infinite;
-    text-shadow: 0 0 12px rgba(255,180,150,0.5);
+/* SECCIONES */
+
+section{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+padding:0 15px;
+
 }
 
-@keyframes goldMove {
-    100% {background-position: 300% center;}
+/* TARJETA COWBOY */
+
+.card{
+
+width:min(300px,88vw);
+
+background:rgba(55,35,20,.45);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,220,170,.25);
+
+border-radius:30px;
+
+padding:22px 18px;
+
+text-align:center;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.65);
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+/* MARCO WESTERN */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+inset:8px;
+
+border:1px solid rgba(210,167,93,.35);
+
+border-radius:24px;
+
+pointer-events:none;
+
 }
 
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(30px);}
-    to {opacity:1; transform:translateY(0);}
+
+/* ESQUINAS DECORATIVAS */
+
+.card .esquina{
+
+position:absolute;
+
+font-size:25px;
+
+color:#D2A75D;
+
+opacity:.8;
+
 }
 
-/* COUNTDOWN */
-.countdown {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin: 30px 0;
+
+.esquina.tl{
+
+top:15px;
+
+left:18px;
+
 }
 
-.countdown div {
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,180,150,0.8);
-    border-radius: 18px;
-    padding: 20px 10px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    color: #fff;
+.esquina.tr{
+
+top:15px;
+
+right:18px;
+
 }
 
-.countdown strong {
-    display: block;
-    font-size: 2.2em;
-    background: linear-gradient(90deg, #ffb38a, #fff0e6, #ffb38a);
-    -webkit-background-clip: text;
-    color: transparent;
+.esquina.bl{
+
+bottom:15px;
+
+left:18px;
+
 }
 
-/* Timeline */
-.timeline {
-    position: relative;
-    margin-top: 20px;
+.esquina.br{
+
+bottom:15px;
+
+right:18px;
+
+}
+.polaroid{
+
+width:160px;
+
+height:190px;
+
+background:
+
+linear-gradient(
+145deg,
+#fff8e8,
+#d8b878
+);
+
+padding:10px;
+
+margin:auto;
+
+margin-bottom:25px;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.65),
+
+0 0 25px rgba(212,175,55,.5);
+
+transform:rotate(-3deg);
+
+position:relative;
+
+animation:flotarFoto 4s ease-in-out infinite;
+
+}
+@keyframes flotarFoto{
+
+0%,100%{
+
+transform:translateY(0) rotate(-3deg);
+
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    width: 2px;
-    height: 0;
-    background: #ffb38a;
-    animation: growLine 2s forwards;
+
+50%{
+
+transform:translateY(-8px) rotate(-3deg);
+
 }
 
-@keyframes growLine {
-    to {height: 100%;}
+}
+.polaroid::before{
+
+content:"";
+
+position:absolute;
+
+inset:-8px;
+
+border-radius:5px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.8),
+transparent
+);
+
+opacity:.5;
+
+filter:blur(8px);
+
+animation:brilloFoto 5s infinite;
+
+z-index:-1;
+
 }
 
-.event {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s forwards;
+
+@keyframes brilloFoto{
+
+50%{
+
+opacity:1;
+
 }
 
-.event:nth-child(1){animation-delay:0.3s}
-.event:nth-child(2){animation-delay:0.6s}
-.event:nth-child(3){animation-delay:0.9s}
-.event:nth-child(4){animation-delay:1.2s}
-.event:nth-child(5){animation-delay:1.5s}
-
-.time {
-    width: 70px;
-    font-size: 0.85em;
-    color: #c48a6a;
-    text-align: right;
-    margin-right: 10px;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    background: #ffb38a;
-    border-radius: 50%;
+.polaroid img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+filter:
+
+contrast(1.05)
+
+brightness(1.05);
+
 }
 
-.content {
-    margin-left: 10px;
-    text-align: left;
-    border-bottom: 1px dashed #ffb38a;
+
+/* BRILLO PASANDO */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:80%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.12),
+transparent
+);
+
+transform:skewX(-20deg);
+
+animation:shine 8s infinite;
+
 }
 
-/* BOTONES */
-button {
-    background: linear-gradient(45deg, #ffb38a, #ffd1b3);
-    border: none;
-    padding: 14px;
-    border-radius: 30px;
-    width: 100%;
-    margin-top: 12px;
-    font-weight: bold;
-    cursor: pointer;
+
+@keyframes shine{
+
+100%{
+
+left:180%;
+
 }
 
-.main-btn {
-    background: linear-gradient(45deg, #ff8c66, #ffd1b3);
-    color: white;
 }
 
-/* partículas */
-.particle {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: rgba(255,180,150,0.5);
-    border-radius: 50%;
-    animation: float 10s linear infinite;
+
+.card.show{
+
+opacity:1;
+
+transform:translateY(0);
+
 }
 
-@keyframes float {
-    from {transform: translateY(100vh);}
-    to {transform: translateY(-10vh);}
+
+
+/* FOTO */
+
+.foto{
+
+width:125px;
+
+height:125px;
+
+margin:auto;
+
+border-radius:50%;
+
+overflow:hidden;
+
+border:4px solid #C49A5A;
+
+box-shadow:
+
+0 0 25px rgba(196,154,90,.45);
+
+margin-bottom:20px;
+
 }
 
-.divider {
-    height: 2px;
-    background: linear-gradient(to right, transparent, #ffb38a, transparent);
-    margin: 10px 0;
+
+.foto img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
 }
+
+
+
+/* TITULO */
+
+.titulo{
+
+font-family:Cinzel,serif;
+
+letter-spacing:7px;
+
+font-size:16px;
+
+font-weight:600;
+
+color:#F5DFA5;
+
+margin-bottom:18px;
+
+text-shadow:
+0 0 8px rgba(212,175,55,.7);
+
+}
+
+
+/* NOMBRES */
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:52px;
+
+font-weight:400;
+
+line-height:1.2;
+
+margin-bottom:18px;
+
+color:#FFF0C8;
+
+letter-spacing:2px;
+
+text-shadow:
+
+0 0 8px #000,
+
+0 0 18px rgba(212,175,55,.8),
+
+0 5px 15px rgba(0,0,0,.8);
+
+}
+
+
+h1 span{
+
+display:block;
+
+font-size:25px;
+
+color:#D2A75D;
+
+margin:5px 0;
+
+}
+
+
+
+/* FECHA */
+
+.fecha{
+
+font-family:Cinzel,serif;
+
+font-size:17px;
+
+letter-spacing:3px;
+
+color:#F3D99A;
+
+margin-bottom:18px;
+
+text-shadow:
+
+0 0 8px rgba(0,0,0,.8);
+
+}
+
+
+/* SEPARADOR */
+
+.linea{
+
+width:80px;
+
+height:2px;
+
+background:#C49A5A;
+
+margin:15px auto;
+
+border-radius:10px;
+
+}
+
+
+
+/* FRASE */
+
+.frase{
+
+font-size:13px;
+
+line-height:1.8;
+
+font-style:italic;
+
+color:#F6EFE4;
+
+opacity:.95;
+
+margin-bottom:25px;
+
+}
+
+
+
+/* CUENTA REGRESIVA */
+
+.contador{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+margin:30px 0;
+
+}
+
+
+.item{
+
+width:58px;
+
+height:70px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+linear-gradient(
+
+145deg,
+
+rgba(255,255,255,.10),
+
+rgba(80,45,20,.55)
+
+);
+
+border:1px solid rgba(212,175,55,.45);
+
+border-radius:18px;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.45),
+
+inset 0 0 15px rgba(212,175,55,.15);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* brillo que pasa */
+
+.item::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent
+
+);
+
+animation:brilloContador 4s infinite;
+
+}
+
+
+@keyframes brilloContador{
+
+50%{
+
+top:100%;
+
+}
+
+}
+
+
+
+.numero{
+
+font-family:Cinzel,serif;
+
+font-size:26px;
+
+font-weight:700;
+
+color:#F5D58A;
+
+text-shadow:
+
+0 0 10px rgba(212,175,55,.8);
+
+z-index:1;
+
+}
+
+
+
+.texto{
+
+font-family:Cinzel,serif;
+
+font-size:9px;
+
+letter-spacing:2px;
+
+color:#FFF0C8;
+
+z-index:1;
+
+margin-top:4px;
+
+}
+/* ===========================
+        ALBUM COWBOY
+=========================== */
+
+
+.album{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+
+
+.foto-album{
+
+background:#F5EBDD;
+
+padding:7px;
+
+height:125px;
+
+box-shadow:
+
+0 10px 20px rgba(0,0,0,.45);
+
+transition:.5s;
+
+}
+
+
+
+.foto-album img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.foto-album:hover{
+
+transform:scale(1.08);
+
+z-index:2;
+
+}
+
+
+
+/* movimiento tipo fotos reales */
+
+
+.rotar1{
+
+transform:rotate(-5deg);
+
+}
+
+
+.rotar2{
+
+transform:rotate(4deg);
+
+}
+
+
+.rotar3{
+
+transform:rotate(3deg);
+
+}
+
+
+.rotar4{
+
+transform:rotate(-4deg);
+
+}
+
+
+.rotar5{
+
+transform:rotate(-3deg);
+
+}
+
+
+.rotar6{
+
+transform:rotate(5deg);
+
+}
+
+
+
+/* BOTON */
+
+.btn{
+
+display:block;
+
+width:100%;
+
+padding:14px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+background:
+
+linear-gradient(
+#A8753F,
+#69421F
+);
+
+color:white;
+
+font-weight:600;
+
+border:
+
+1px solid rgba(255,220,170,.30);
+
+transition:.4s;
+
+}
+.polvo{
+
+position:fixed;
+
+width:6px;
+
+height:6px;
+
+background:#E7C98D;
+
+border-radius:50%;
+
+opacity:.55;
+
+animation:flotarPolvo 12s infinite linear;
+
+z-index:1;
+
+}
+
+
+.izquierdaPolvo{
+
+top:20%;
+
+left:10%;
+
+box-shadow:
+
+40px 80px #E7C98D,
+
+100px 200px #E7C98D,
+
+200px 50px #E7C98D,
+
+280px 300px #E7C98D,
+
+50px 400px #E7C98D;
+
+}
+
+
+
+.derechaPolvo{
+
+top:25%;
+
+right:10%;
+
+box-shadow:
+
+-40px 80px #E7C98D,
+
+-100px 200px #E7C98D,
+
+-200px 50px #E7C98D,
+
+-280px 300px #E7C98D,
+
+-50px 400px #E7C98D;
+
+}
+
+
+
+@keyframes flotarPolvo{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-80px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+background:
+
+linear-gradient(
+#C99A5A,
+#8A5A2B
+);
+
+}
+
+
+
+/* DESLIZAR */
+
+.scroll{
+
+margin-top:20px;
+
+font-size:13px;
+
+opacity:.7;
+
+animation:flotar 2s infinite;
+
+}
+
+
+/* ===========================
+       UBICACION WESTERN
+=========================== */
+
+
+.ubicacion-icono{
+
+font-size:35px;
+
+margin-bottom:10px;
+
+filter:drop-shadow(0 5px 5px black);
+
+}
+
+
+
+.mapa{
+
+width:100%;
+
+height:170px;
+
+overflow:hidden;
+
+border-radius:20px;
+
+border:
+
+2px solid rgba(210,167,93,.45);
+
+margin-bottom:20px;
+
+}
+
+
+
+.mapa iframe{
+
+width:100%;
+
+height:100%;
+
+border:0;
+
+}
+
+
+
+.lugar{
+
+font-family:Cinzel,serif;
+
+font-size:18px;
+
+line-height:1.5;
+
+color:#F5E2BF;
+
+margin-bottom:12px;
+
+}
+
+
+
+.direccion{
+
+font-size:13px;
+
+color:#E5D2B0;
+
+line-height:1.6;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+
+
+/* ==========================
+      ITINERARIO WESTERN
+========================== */
+
+
+.titulo-seccion{
+
+font-family:Cinzel,serif;
+
+font-size:22px;
+
+letter-spacing:4px;
+
+color:#F5E1B5;
+
+margin-top:10px;
+
+}
+
+
+
+.timeline{
+
+margin-top:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+width:100%;
+
+}
+
+
+
+.evento{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+text-align:left;
+
+opacity:0;
+
+transform:translateX(-20px);
+
+animation:aparecerEvento .8s ease forwards;
+
+}
+
+
+.evento:nth-child(1){
+animation-delay:.3s;
+}
+
+
+.evento:nth-child(3){
+animation-delay:.6s;
+}
+
+
+.evento:nth-child(5){
+animation-delay:.9s;
+}
+
+
+.evento:nth-child(7){
+animation-delay:1.2s;
+}
+
+
+
+@keyframes aparecerEvento{
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+.evento:nth-child(1){
+
+animation-delay:.3s;
+
+}
+
+
+.evento:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+
+.evento:nth-child(5){
+
+animation-delay:1.3s;
+
+}
+
+
+.evento:nth-child(7){
+
+animation-delay:1.8s;
+
+}
+
+
+
+@keyframes aparecerEvento{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+.icono{
+
+width:45px;
+
+height:45px;
+
+min-width:45px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+background:rgba(140,90,40,.35);
+
+border-radius:50%;
+
+border:1px solid #D4AF37;
+
+box-shadow:
+
+0 0 12px rgba(212,175,55,.5);
+
+}
+
+
+@keyframes pulsoIcono{
+
+50%{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 25px rgba(212,175,55,.8);
+
+}
+
+}
+
+.evento h3{
+
+font-family:Cinzel,serif;
+
+font-size:15px;
+
+letter-spacing:1px;
+
+margin:0;
+
+color:#F5E2BF;
+
+}
+
+
+.evento p{
+
+font-size:13px;
+
+margin-top:3px;
+
+color:#D4AF37;
+
+}
+
+.evento p{
+
+font-family:Cinzel,serif;
+
+font-size:16px;
+
+letter-spacing:3px;
+
+color:#D4AF37;
+
+margin-top:6px;
+
+}
+
+/* ======================
+   PANTALLA DE APERTURA
+====================== */
+
+
+.intro{
+
+position:fixed;
+
+inset:0;
+
+background:transparent;
+
+z-index:9999;
+
+overflow:hidden;
+
+}
+
+
+
+/* PUERTAS */
+
+
+.puerta{
+
+position:absolute;
+
+top:0;
+
+width:50%;
+
+height:100%;
+
+background-image:url("img/puertas.png");
+
+background-size:200% 100%;
+
+background-repeat:no-repeat;
+
+transition:2.2s cubic-bezier(.77,0,.18,1);
+
+z-index:2;
+
+}
+.puerta::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+90deg,
+
+rgba(255,255,255,.08) 0px,
+rgba(255,255,255,.02) 4px,
+transparent 8px,
+rgba(0,0,0,.08) 12px,
+transparent 18px
+
+);
+
+opacity:.8;
+
+}
+.puerta::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+
+180deg,
+
+transparent 0px,
+
+rgba(255,255,255,.04) 2px,
+
+transparent 6px,
+
+rgba(0,0,0,.08) 10px,
+
+transparent 16px
+
+);
+
+mix-blend-mode:soft-light;
+
+}
+
+.izquierda{
+
+left:0;
+
+background-position:left center;
+
+}
+
+
+.derecha{
+
+right:0;
+
+background-position:right center;
+
+}
+/* CONTENIDO */
+
+
+.bienvenida{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+z-index:5;
+
+text-align:center;
+
+color:white;
+
+width:90%;
+
+}
+
+.bienvenida h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:72px;
+
+font-weight:normal;
+
+line-height:1.1;
+
+color:#FFF8E7;
+
+text-shadow:
+0 0 8px rgba(0,0,0,.8),
+0 3px 10px rgba(0,0,0,.9),
+0 6px 25px rgba(0,0,0,.8);
+
+}
+
+
+.bienvenida h1 span{
+
+display:block;
+
+font-size:40px;
+
+margin:8px 0;
+
+color:#D4AF37;
+
+text-shadow:
+0 0 10px black;
+
+}
+
+
+.bienvenida .mini{
+
+font-family:Cinzel,serif;
+
+letter-spacing:10px;
+
+font-size:22px;
+
+font-weight:600;
+
+color:#F5DFA5;
+
+margin-bottom:25px;
+
+text-shadow:
+0 0 5px #000,
+0 0 15px rgba(212,175,55,.8),
+0 3px 10px rgba(0,0,0,.9);
+
+animation:aparecerMini 2s ease forwards;
+
+}
+@keyframes aparecerMini{
+
+from{
+
+opacity:0;
+
+transform:translateY(-15px);
+
+letter-spacing:18px;
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+letter-spacing:10px;
+
+}
+
+}
+.bienvenida .mini::before,
+.bienvenida .mini::after{
+
+content:"✦";
+
+color:#D4AF37;
+
+margin:0 15px;
+
+font-size:14px;
+
+}
+.bienvenida .fecha{
+
+font-family:Cinzel,serif;
+
+font-size:22px;
+
+font-weight:500;
+
+letter-spacing:5px;
+
+margin-top:25px;
+
+color:#F8E6B0;
+
+text-shadow:
+0 0 5px #000,
+0 0 12px rgba(212,175,55,.7),
+0 3px 10px rgba(0,0,0,.9);
+
+animation:aparecerFecha 3s ease forwards;
+
+animation-delay:1.5s;
+
+opacity:0;
+
+}
+
+@keyframes aparecerFecha{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+filter:blur(5px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+filter:blur(0);
+
+}
+
+}
+.bienvenida .fecha::before,
+.bienvenida .fecha::after{
+
+content:"✦";
+
+color:#D4AF37;
+
+font-size:16px;
+
+margin:0 15px;
+
+text-shadow:
+0 0 8px #D4AF37;
+
+}
+.abrir{
+
+opacity:0;
+
+transition:1s;
+
+}
+@media(max-width:600px){
+
+.bienvenida h1{
+
+font-size:58px;
+
+}
+
+.bienvenida h1 span{
+
+font-size:34px;
+
+}
+}
+
+
+.efecto-escritura{
+
+width:auto;
+
+border-right:none;
+
+animation:aparecerNombre 2.5s ease forwards;
+
+}
+
+@keyframes aparecerNombre{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px) scale(.95);
+
+filter:blur(8px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+filter:blur(0);
+
+}
+
+}
+
+
+/* ANIMACION APERTURA */
+
+.intro.abrirPuerta .izquierda{
+
+    transform:translateX(-100%);
+
+}
+
+
+.intro.abrirPuerta .derecha{
+
+    transform:translateX(100%);
+
+}
+
+
+.intro.abrirPuerta .bienvenida{
+
+    opacity:0;
+
+    transition:.8s;
+
+}
+
+
+.separador{
+
+height:15px;
+
+width:2px;
+
+background:#D4AF37;
+
+margin-left:22px;
+
+opacity:.5;
+
+}
+
+
+.separador::after{
+
+content:"✦";
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+color:#D4AF37;
+
+font-size:12px;
+
+}
+.r1{
+
+top:80px;
+left:25px;
+
+}
+
+.r2{
+
+top:50%;
+left:25px;
+
+transform:translateY(-50%);
+
+}
+
+.r3{
+
+bottom:80px;
+left:25px;
+
+}
+
+.derecha .r1,
+.derecha .r2,
+.derecha .r3{
+
+left:auto;
+right:25px;
+
+}
+
+
+@keyframes flotar{
+
+50%{
+
+transform:translateY(8px);
+
+}
+
+}
+
 </style>
+
 </head>
 
-<body>
 
-<!-- 🎵 Música -->
-<audio id="music" loop>
-<source src="boda.mp3" type="audio/mpeg">
+
+
+
+
+
+
+
+
+<body>
+<audio id="musica" loop>
+
+<source src="audio/musica.mp3" type="audio/mpeg">
+
 </audio>
 
-<!-- ENCABEZADO -->
-<div class="section">
+
+<div id="intro" class="intro">
+
+    <div class="puerta izquierda"></div>
+
+    <div class="puerta derecha"></div>
+
+    <div class="bienvenida">
+
+        <p class="mini">NUESTRA BODA</p>
+
+       <h1 class="efecto-escritura">
+
+Javier
+
+<span>&</span>
+
+Jessica
+
+</h1>
+
+        <div class="fecha">
+
+            12 · Agosto · 2026
+
+        </div>
+
+        <div class="abrir">
+
+            ✨ Toca para abrir ✨
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<main>
+
+<section>
+
 <div class="card">
 
-<p>NUESTRA BODA</p>
-
-<h1 class="gold-text">Yadira & Daniel</h1>
-
-<div class="divider"></div>
-
-<p>15 · MAYO · 2026</p>
-
-<p>Con gran alegría te invitamos a celebrar con nosotros.</p>
+<div class="esquina tl">✦</div>
+<div class="esquina tr">✦</div>
+<div class="esquina bl">✦</div>
+<div class="esquina br">✦</div>
 
 
+<div class="polaroid">
 
-<div class="countdown">
-<div><strong id="d"></strong>DÍAS</div>
-<div><strong id="h"></strong>HORAS</div>
-<div><strong id="m"></strong>MIN</div>
-<div><strong id="s"></strong>SEG</div>
-</div>
-
-<button class="main-btn" onclick="window.open('https://wa.me/526251641528?text=Confirmo%20mi%20asistencia')">
-💬 Confirmar asistencia
-</button>
+<img src="img/pareja.jpg">
 
 </div>
+<div class="titulo">
+NOS CASAMOS
 </div>
 
-<!-- ITINERARIO -->
-<div class="section">
+<h1>
+
+Javier
+
+<span>&</span>
+
+Jessica
+
+</h1>
+
+<div class="fecha">
+
+12 de Agosto del 2026
+
+</div>
+
+<div class="frase">
+
+"El amor es la aventura más hermosa cuando dos corazones deciden caminar juntos."
+
+</div>
+
+<div class="contador">
+
+<div class="item">
+
+<div class="numero" id="dias">000</div>
+
+<div class="texto">DÍAS</div>
+
+</div>
+
+<div class="item">
+
+<div class="numero" id="horas">00</div>
+
+<div class="texto">HORAS</div>
+
+</div>
+
+<div class="item">
+
+<div class="numero" id="minutos">00</div>
+
+<div class="texto">MIN</div>
+
+</div>
+
+<div class="item">
+
+<div class="numero" id="segundos">00</div>
+
+<div class="texto">SEG</div>
+
+</div>
+
+</div>
+
+<a 
+href="https://wa.me/6252060896?text=Hola%20Javier%20y%20Jessica,%20confirmo%20mi%20asistencia%20a%20su%20boda."
+target="_blank"
+class="btn">
+
+Confirmar asistencia
+
+</a>
+
+<div class="scroll">
+
+
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
 <div class="card">
 
-<h2 class="gold-text">Itinerario</h2>
+<div class="esquina tl">✦</div>
+<div class="esquina tr">✦</div>
+<div class="esquina bl">✦</div>
+<div class="esquina br">✦</div>
+
+
+<h2 class="titulo-seccion">
+ITINERARIO
+</h2>
+
+
+<div class="linea"></div>
+
 
 <div class="timeline">
-<div class="event"><div class="time">8:00 PM</div><div class="dot"></div><div class="content">🍽️ Recepción</div></div>
-<div class="event"><div class="time">12:00 PM</div><div class="dot"></div><div class="content">🥂 Brindis</div></div>
-<div class="event"><div class="time">8:00 PM</div><div class="dot"></div><div class="content">💃 Baile</div></div>
-<div class="event"><div class="time">2:00 AM</div><div class="dot"></div><div class="content">🌙 Fin</div></div>
+
+
+<div class="evento">
+
+<div class="icono">
+💒
 </div>
 
-</div>
-</div>
+<h3>
+Ceremonia
+</h3>
 
-<!-- LLUVIA DE SOBRES -->
-<div class="section">
-<div class="card">
-
-<h2 class="gold-text">Lluvia de sobres</h2>
-
-<p style="margin-top:10px;">💌 Su presencia es nuestro mejor regalo.</p>
-
-<p style="margin-top:8px;">
-Pero si desean tener un detalle con nosotros, habrá sobres disponibles para quienes gusten obsequiarnos algo en efectivo.
-</p>
-
-<div class="divider"></div>
-
-<p style="font-size:0.9em; color:#777;">
-Tu presencia es lo más importante 💖
+<p>
+5:00 PM
 </p>
 
 </div>
+
+
+
+<div class="separador"></div>
+
+
+
+<div class="evento">
+
+<div class="icono">
+🥂
 </div>
 
-<!-- UBICACIÓN -->
-<div class="section">
+<h3>
+Recepción
+</h3>
+
+<p>
+7:00 PM
+</p>
+
+</div>
+
+
+
+<div class="separador"></div>
+
+
+
+<div class="evento">
+
+<div class="icono">
+🍖
+</div>
+
+<h3>
+Cena
+</h3>
+
+<p>
+8:00 PM
+</p>
+
+</div>
+
+
+
+<div class="separador"></div>
+
+
+
+<div class="evento">
+
+<div class="icono">
+🤠
+</div>
+
+<h3>
+Baile
+</h3>
+
+<p>
+9:00 PM
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+<section>
+
 <div class="card">
 
-<h2 class="gold-text">Ubicación</h2>
-<p>Jardín Maria de Guadalupe</p>
+<div class="esquina tl">✦</div>
+<div class="esquina tr">✦</div>
+<div class="esquina bl">✦</div>
+<div class="esquina br">✦</div>
 
-<button onclick="window.open('https://maps.app.goo.gl/Bj8AU2kfaaNQtT3M9')">
-📍 Ver mapa
-</button>
 
-<hr>
+<h2 class="titulo-seccion">
 
-<h2 class="gold-text">Dress Code</h2>
-<p>Formal elegante</p>
-<p style="color:#777;">Evitar blanco</p>
+NUESTRA HISTORIA
+
+</h2>
+
+
+<div class="linea"></div>
+
+
+<p class="frase">
+
+"Pequeños momentos que se convirtieron en nuestra historia."
+
+</p>
+
+
+<div class="album">
+
+
+<div class="foto-album rotar1">
+
+<img src="img/foto1.jpg">
 
 </div>
+
+
+<div class="foto-album rotar2">
+
+<img src="img/foto2.jpg">
+
 </div>
+
+
+<div class="foto-album rotar3">
+
+<img src="img/foto3.jpg">
+
+</div>
+
+
+<div class="foto-album rotar4">
+
+<img src="img/foto4.jpg">
+
+</div>
+
+
+<div class="foto-album rotar5">
+
+<img src="img/foto5.jpg">
+
+</div>
+
+
+<div class="foto-album rotar6">
+
+<img src="img/foto6.jpg">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+
+<div class="esquina tl">✦</div>
+<div class="esquina tr">✦</div>
+<div class="esquina bl">✦</div>
+<div class="esquina br">✦</div>
+
+
+<div class="ubicacion-icono">
+
+📍
+
+</div>
+
+
+<h2 class="titulo-seccion">
+
+UBICACIÓN
+
+</h2>
+
+
+<div class="linea"></div>
+
+
+
+<div class="mapa">
+
+
+<iframe
+
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7881.897803947217!2d-107.83250932230264!3d28.948970101254133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86c159bb04ce083b%3A0xe7af592edc211f6e!2sEL%20MIRADOR%20SALON%20DE%20EVENTOS!5e1!3m2!1ses-419!2smx!4v1784593588811!5m2!1ses-419!2smx"
+
+loading="lazy">
+
+</iframe>
+
+
+</div>
+
+
+
+<h3 class="lugar">
+
+EL MIRADOR
+
+<br>
+
+SALÓN DE EVENTOS
+
+</h3>
+
+
+
+<p class="direccion">
+
+Te esperamos para celebrar este día tan especial.
+
+</p>
+
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=W5X8%2B2G%20Tem%C3%B3sachic%2C%20Chihuahua"
+target="_blank"
+
+class="btn">
+
+🧭 Cómo llegar
+
+</a>
+
+
+
+</div>
+
+
+</section>
+
+</main>
 
 <script>
-// 🎵 música automática
-const music = document.getElementById("music");
-music.volume = 0;
+const destino = new Date("August 12, 2026 00:00:00").getTime();
 
-function startMusic() {
-    music.play().catch(()=>{});
+function actualizar(){
 
-    let vol = 0;
-    let fade = setInterval(() => {
-        if (vol < 0.5) {
-            vol += 0.02;
-            music.volume = vol;
-        } else {
-            clearInterval(fade);
-        }
-    }, 200);
+    const ahora = new Date().getTime();
+
+    const diferencia = destino - ahora;
+
+
+    if(diferencia <= 0){
+
+        document.getElementById("dias").innerHTML = "000";
+        document.getElementById("horas").innerHTML = "00";
+        document.getElementById("minutos").innerHTML = "00";
+        document.getElementById("segundos").innerHTML = "00";
+
+        return;
+
+    }
+
+
+    const dias = Math.floor(diferencia/(1000*60*60*24));
+
+    const horas = Math.floor(
+        (diferencia%(1000*60*60*24))/(1000*60*60)
+    );
+
+    const minutos = Math.floor(
+        (diferencia%(1000*60*60))/(1000*60)
+    );
+
+    const segundos = Math.floor(
+        (diferencia%(1000*60))/1000
+    );
+
+
+    document.getElementById("dias").innerHTML =
+    String(dias).padStart(3,"0");
+
+
+    document.getElementById("horas").innerHTML =
+    String(horas).padStart(2,"0");
+
+
+    document.getElementById("minutos").innerHTML =
+    String(minutos).padStart(2,"0");
+
+
+    document.getElementById("segundos").innerHTML =
+    String(segundos).padStart(2,"0");
+
 }
 
-document.addEventListener("click", startMusic, { once: true });
-document.addEventListener("touchstart", startMusic, { once: true });
-document.addEventListener("scroll", startMusic, { once: true });
 
-// countdown
-const eventDate = new Date('May 15, 2026 17:00:00').getTime();
+actualizar();
 
-setInterval(()=>{
-let now=new Date().getTime();
-let d=eventDate-now;
+setInterval(actualizar,1000);
+actualizar();
 
-document.getElementById('d').innerHTML=Math.floor(d/(1000*60*60*24));
-document.getElementById('h').innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-document.getElementById('m').innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
-document.getElementById('s').innerHTML=Math.floor((d%(1000*60))/1000);
-},1000);
+const observer=new IntersectionObserver((entries)=>{
 
-// partículas
-for(let i=0;i<25;i++){
-let p=document.createElement('div');
-p.className='particle';
-p.style.left=Math.random()*100+'vw';
-document.body.appendChild(p);
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
 }
+
+});
+
+});
+
+document.querySelectorAll(".card").forEach(card=>observer.observe(card));
+
+
+
+// ==========================
+// MUSICA AL PRIMER TOQUE O DESLIZAR
+// ==========================
+
+const musica = document.getElementById("musica");
+
+let reproduciendo = false;
+
+
+function activarMusica(){
+
+    if(reproduciendo) return;
+
+
+    musica.volume = 0.35;
+
+
+    musica.play()
+    .then(()=>{
+
+        reproduciendo = true;
+
+        console.log("Música iniciada");
+
+        // quitamos eventos después de iniciar
+        quitarEventos();
+
+    })
+    .catch(error=>{
+
+        console.log("Esperando interacción:", error);
+
+    });
+
+}
+
+
+
+// Eventos que activan la música
+
+document.addEventListener(
+"click",
+activarMusica
+);
+
+
+document.addEventListener(
+"touchstart",
+activarMusica
+);
+
+
+document.addEventListener(
+"pointerdown",
+activarMusica
+);
+
+
+document.addEventListener(
+"scroll",
+activarMusica
+);
+
+
+
+function quitarEventos(){
+
+document.removeEventListener(
+"click",
+activarMusica
+);
+
+document.removeEventListener(
+"touchstart",
+activarMusica
+);
+
+document.removeEventListener(
+"pointerdown",
+activarMusica
+);
+
+document.removeEventListener(
+"scroll",
+activarMusica
+);
+
+}
+
+// ======================
+// ABRIR INVITACION
+// ======================
+
+
+const intro = document.getElementById("intro");
+
+intro.addEventListener("click", () => {
+
+    activarMusica();
+
+    intro.classList.add("abrirPuerta");
+
+    setTimeout(() => {
+        intro.remove();
+    }, 2500);
+
+});
+const escribir=document.querySelector(".efecto-escritura");
+
+escribir.addEventListener("animationend",(e)=>{
+
+if(e.animationName==="escribir"){
+
+escribir.style.borderRight="none";
+
+document.querySelector(".abrir").style.opacity=1;
+
+}
+
+});
+
+
 </script>
-
 </body>
+<div class="polvo izquierdaPolvo"></div>
+
+<div class="polvo derechaPolvo"></div>
+
 </html>
