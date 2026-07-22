@@ -1235,6 +1235,140 @@ overflow:hidden;
 
 }
 
+/*=========================
+      GALERIA
+==========================*/
+
+.galeria{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.92);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:99999;
+
+}
+
+.galeria.activa{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.galeria img{
+
+max-width:90%;
+
+max-height:85%;
+
+border-radius:15px;
+
+border:4px solid #D4AF37;
+
+box-shadow:0 0 35px rgba(212,175,55,.5);
+
+animation:zoom .35s;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.cerrar{
+
+position:absolute;
+
+top:20px;
+
+right:30px;
+
+font-size:45px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+.anterior,
+.siguiente{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+background:rgba(0,0,0,.45);
+
+border:none;
+
+color:white;
+
+font-size:42px;
+
+cursor:pointer;
+
+padding:12px 18px;
+
+border-radius:50%;
+
+transition:.3s;
+
+}
+
+.anterior:hover,
+.siguiente:hover{
+
+background:#D4AF37;
+
+}
+
+.anterior{
+
+left:20px;
+
+}
+
+.siguiente{
+
+right:20px;
+
+}
+
 
 
 /* PUERTAS */
@@ -1706,6 +1840,18 @@ transform:translateY(8px);
 
 
 <body>
+
+<div id="galeria" class="galeria">
+
+    <span class="cerrar">&times;</span>
+
+    <img id="imagenGrande">
+
+    <button class="anterior">&#10094;</button>
+
+    <button class="siguiente">&#10095;</button>
+
+</div>
 <audio id="musica" loop>
 
 <source src="audio/musica.mp3" type="audio/mpeg">
@@ -2324,8 +2470,102 @@ document.querySelector(".abrir").style.opacity=1;
 
 });
 
+const fotos = document.querySelectorAll(".foto-album img");
+
+const galeria = document.getElementById("galeria");
+
+const imagenGrande = document.getElementById("imagenGrande");
+
+const cerrar = document.querySelector(".cerrar");
+
+const anterior = document.querySelector(".anterior");
+
+const siguiente = document.querySelector(".siguiente");
+
+let indice = 0;
+
+
+// Abrir imagen
+
+fotos.forEach((foto,i)=>{
+
+foto.addEventListener("click",()=>{
+
+indice=i;
+
+mostrarImagen();
+
+galeria.classList.add("activa");
+
+});
+
+});
+
+
+function mostrarImagen(){
+
+imagenGrande.src=fotos[indice].src;
+
+}
+
+
+// Cerrar
+
+cerrar.addEventListener("click",()=>{
+
+galeria.classList.remove("activa");
+
+});
+
+
+// Siguiente
+
+siguiente.addEventListener("click",()=>{
+
+indice++;
+
+if(indice>=fotos.length){
+
+indice=0;
+
+}
+
+mostrarImagen();
+
+});
+
+
+// Anterior
+
+anterior.addEventListener("click",()=>{
+
+indice--;
+
+if(indice<0){
+
+indice=fotos.length-1;
+
+}
+
+mostrarImagen();
+
+});
+
+
+// Cerrar al tocar fondo
+
+galeria.addEventListener("click",(e)=>{
+
+if(e.target===galeria){
+
+galeria.classList.remove("activa");
+
+}
+
+});
 
 </script>
+
 </body>
 <div class="polvo izquierdaPolvo"></div>
 
