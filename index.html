@@ -26,16 +26,19 @@ scroll-behavior:smooth;
 }
 
 body{
+    background-image:url("img/fondo.jpg");
+    background-size:cover;
+    background-position:center;
+}
 
-font-family:Poppins,sans-serif;
-color:white;
-overflow-x:hidden;
+@media (max-width:768px){
 
-background-image:url("img/fondo.jpg");
-background-size:cover;
-background-position:center center;
-background-repeat:no-repeat;
-background-attachment:fixed;
+body{
+    background-image:url("img/fondo-mobile.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:scroll;
+}
 
 }
 @media (max-width:768px){
